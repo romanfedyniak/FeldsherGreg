@@ -5,18 +5,11 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.feldsher.feldshergreg.tileentities.*;
 
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]",
 	dependencies="required-after:gregtech")
 public class FeldsherGreg {
-
-    private GT_MetaTileEntity_Quarry1 quarry1;
-    private GT_MetaTileEntity_Quarry2 quarry2;
-    private GT_MetaTileEntity_Quarry3 quarry3;
-    private GT_MetaTileEntity_Quarry4 quarry4;
-
 
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
@@ -28,10 +21,6 @@ public class FeldsherGreg {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
-        quarry1 = new GT_MetaTileEntity_Quarry1(15001, "multimachine.quarry1", "Quarry I");
-        quarry2 = new GT_MetaTileEntity_Quarry2(15002, "multimachine.quarry2", "Quarry II");
-        quarry3 = new GT_MetaTileEntity_Quarry3(15003, "multimachine.quarry3", "Quarry III");
-        quarry4 = new GT_MetaTileEntity_Quarry4(15004, "multimachine.quarry4", "Quarry IV");
     }
 
     @Mod.EventHandler
