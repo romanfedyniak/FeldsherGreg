@@ -78,6 +78,7 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
                         mLastZOff = j;
                         return true;
                     }
+                    return false;
                 }
                 else if (canDrain(block, aX, aY, aZ))
                 {
@@ -159,7 +160,7 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
             || block == miningPipeTipBlock
             || block.getBlockHardness(getBaseMetaTileEntity().getWorld(), aX, aY, aZ) < 0.0F)
             return false;
-        return true;
+        return GT_Utility.eraseBlockByFakePlayer(getFakePlayer(getBaseMetaTileEntity()), aX, aY, aZ, true);
     }
 
     public void pumpBlock(final Block block, int aX, int aY, int aZ) {
