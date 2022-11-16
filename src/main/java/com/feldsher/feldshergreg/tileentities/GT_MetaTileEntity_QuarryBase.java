@@ -60,7 +60,6 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
         }
         
         int radius = getRadius();
-        radius = 5;
         if (mLastXOff == 0 && mLastZOff == 0) {
 			mLastXOff = -radius;
 			mLastZOff = -radius;
