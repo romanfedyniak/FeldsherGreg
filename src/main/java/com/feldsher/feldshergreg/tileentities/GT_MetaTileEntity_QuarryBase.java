@@ -184,14 +184,11 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
     }
 
     private boolean tryConsumeDrillingFluid() {
-        // TODO прибрати це
+        if (!depleteInput(new FluidStack(ItemList.sDrillingFluid, 50))) {
+        	mMaxProgresstime = 0;
+        	return false;
+        }
         return true;
-        
-        // if (!depleteInput(new FluidStack(ItemList.sDrillingFluid, 50))) {
-        // 	mMaxProgresstime = 0;
-        // 	return false;
-        // }
-        // return true;
     }
 
     protected abstract int getRadius();
