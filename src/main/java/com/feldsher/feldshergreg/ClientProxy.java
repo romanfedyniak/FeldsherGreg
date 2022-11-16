@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.feldsher.feldshergreg;
 
 import cpw.mods.fml.common.event.*;
 
