@@ -1,6 +1,7 @@
 package com.feldsher.feldshergreg;
 
 import com.feldsher.feldshergreg.tileentities.*;
+import com.feldsher.feldshergreg.loaders.*;
 import cpw.mods.fml.common.event.*;
 
 public class CommonProxy {
@@ -17,14 +18,14 @@ public class CommonProxy {
 
         FeldsherGreg.info(Config.greeting);
         FeldsherGreg.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION + " and group name " + Tags.GROUPNAME);
+
+        MetaTileEntitiesLoader.load();
+        RecipeLoader.load();
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
     public void init(FMLInitializationEvent event) {
-        quarry1 = new GT_MetaTileEntity_Quarry1(15001, "multimachine.quarry1", "Quarry I");
-        quarry2 = new GT_MetaTileEntity_Quarry2(15002, "multimachine.quarry2", "Quarry II");
-        quarry3 = new GT_MetaTileEntity_Quarry3(15003, "multimachine.quarry3", "Quarry III");
-        quarry4 = new GT_MetaTileEntity_Quarry4(15004, "multimachine.quarry4", "Quarry IV");
+    	
     }
 
     // postInit "Handle interaction with other mods, complete your setup based on this."
