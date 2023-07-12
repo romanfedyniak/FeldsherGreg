@@ -24,10 +24,10 @@ public final class RecipeLoader {
     // Workbench recipes
     private static void loadWorkbench() {
         long bits = GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.BUFFERED;
-        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry1, bits, new Object[]{"WWW", "EME", "CCC", 'M', Ic2Items.advminer, 'W', OrePrefixes.frameGt.get(Materials.Titanium), 'E', OrePrefixes.circuit.get(Materials.Data), 'C', ItemList.Electric_Motor_EV});
-        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry2, bits, new Object[]{"WWW", "EME", "CCC", 'M', FeldsherGregsItems.quarry1, 'W', OrePrefixes.frameGt.get(Materials.TungstenSteel), 'E', OrePrefixes.circuit.get(Materials.Elite), 'C', ItemList.Electric_Motor_IV});
-        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry3, bits, new Object[]{"WWW", "EME", "CCC", 'M', FeldsherGregsItems.quarry2, 'W', OrePrefixes.frameGt.get(Materials.Osmiridium), 'E', OrePrefixes.circuit.get(Materials.Master), 'C', ItemList.Electric_Motor_LuV});
-        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry4, bits, new Object[]{"WWW", "EME", "CCC", 'M', FeldsherGregsItems.quarry3, 'W', OrePrefixes.frameGt.get(Materials.Tritanium), 'E', OrePrefixes.circuit.get(Materials.Ultimate), 'C', ItemList.Electric_Motor_ZPM});
+        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry1, bits, new Object[]{"WWW", "EME", "CPC", 'M', Ic2Items.advminer, 'W', OrePrefixes.frameGt.get(Materials.Titanium), 'E', OrePrefixes.circuit.get(Materials.Data), 'C', ItemList.Electric_Motor_EV, 'P', ItemList.Electric_Pump_EV});
+        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry2, bits, new Object[]{"WWW", "EME", "CPC", 'M', FeldsherGregsItems.quarry1, 'W', OrePrefixes.frameGt.get(Materials.TungstenSteel), 'E', OrePrefixes.circuit.get(Materials.Elite), 'C', ItemList.Electric_Motor_IV, 'P', ItemList.Electric_Pump_IV});
+        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry3, bits, new Object[]{"WWW", "EME", "CPC", 'M', FeldsherGregsItems.quarry2, 'W', OrePrefixes.frameGt.get(Materials.Osmiridium), 'E', OrePrefixes.circuit.get(Materials.Master), 'C', ItemList.Electric_Motor_LuV, 'P', ItemList.Electric_Pump_LuV});
+        GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.quarry4, bits, new Object[]{"WWW", "EME", "CPC", 'M', FeldsherGregsItems.quarry3, 'W', OrePrefixes.frameGt.get(Materials.Tritanium), 'E', OrePrefixes.circuit.get(Materials.Ultimate), 'C', ItemList.Electric_Motor_ZPM, 'P', ItemList.Electric_Pump_ZPM});
     }
 
     // Mixer recipes
