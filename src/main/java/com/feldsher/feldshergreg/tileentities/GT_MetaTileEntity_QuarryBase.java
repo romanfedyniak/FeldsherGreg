@@ -27,6 +27,8 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.IFluidBlock;
 import net.minecraft.block.BlockLiquid;
 
+import com.feldsher.feldshergreg.Config;
+
 
 public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_DrillerBase {
 
@@ -208,6 +210,7 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
                 "1x Output Bus (Any bottom layer casing)",
                 "1x Maintenance Hatch (Any bottom layer casing)",
                 "1x " + VN[getMinTier()] + "+ Energy Hatch (Any bottom layer casing)",
-                "Radius is " + getRadius() + " blocks"};
+                "Radius is " + getRadius() + " blocks",
+                Config.copyright};
     }
 }

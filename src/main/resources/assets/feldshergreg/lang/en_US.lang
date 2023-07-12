@@ -1,0 +1,23 @@
+# ItemDust
+item.item_dust.0.name=Superconductor LV Base
+item.item_dust.0.tooltip=MnP
+item.item_dust.1.name=Superconductor MV Base
+item.item_dust.1.tooltip=MgB2
+item.item_dust.2.name=Superconductor HV Base
+item.item_dust.2.tooltip=HgBa2Ca2Cu3
+item.item_dust.3.name=Superconductor EV Base
+item.item_dust.3.tooltip=Ce2Cu2Si2
+item.item_dust.4.name=Superconductor IV Base
+item.item_dust.4.tooltip=La2Cu
+
+# ItemIngot
+item.item_ingot.0.name=Superconductor LV Base Ingot
+item.item_ingot.0.tooltip=MnP
+item.item_ingot.1.name=Superconductor MV Base Ingot
+item.item_ingot.1.tooltip=MgB2
+item.item_ingot.2.name=Superconductor HV Base Ingot
+item.item_ingot.2.tooltip=HgBa2Ca2Cu3O8
+item.item_ingot.3.name=Superconductor EV Base Ingot
+item.item_ingot.3.tooltip=Ce2Cu2Si2
+item.item_ingot.4.name=Superconductor IV Base Ingot
+item.item_ingot.4.tooltip=La2CuO4
