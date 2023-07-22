@@ -14,6 +14,9 @@ public final class FeldsherGregsItems {
     superconductorBaseHVWire,
     superconductorBaseEVWire,
     superconductorBaseIVWire,
+    galvanicGenerator1,
+    galvanicGenerator2,
+    galvanicGenerator3,
 
     // ItemsLoader
     // - ItemDust

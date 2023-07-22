@@ -21,6 +21,10 @@ public final class MetaTileEntitiesLoader {
         FeldsherGregsItems.quarry2 = new GT_MetaTileEntity_Quarry2(15002, "multimachine.quarry2", "Quarry II").getStackForm(1);
         FeldsherGregsItems.quarry3 = new GT_MetaTileEntity_Quarry3(15003, "multimachine.quarry3", "Quarry III").getStackForm(1);
         FeldsherGregsItems.quarry4 = new GT_MetaTileEntity_Quarry4(15004, "multimachine.quarry4", "Quarry IV").getStackForm(1);
+
+        FeldsherGregsItems.galvanicGenerator1 = new GT_MetaTileEntity_GalvanicGenerator(15005, "galvanicgenerator1", "Galvanic Generator LV", 1).getStackForm(1);
+        FeldsherGregsItems.galvanicGenerator2 = new GT_MetaTileEntity_GalvanicGenerator(15006, "galvanicgenerator2", "Galvanic Generator MV", 2).getStackForm(1);
+        FeldsherGregsItems.galvanicGenerator3 = new GT_MetaTileEntity_GalvanicGenerator(15007, "galvanicgenerator3", "Galvanic Generator HV", 3).getStackForm(1);
     }
 
     private static void loadWire() {
