@@ -36,12 +36,12 @@ public final class MetaTileEntitiesLoader {
         ItemStack[][] superconductorHV = makeWire("Superconductor HV", 15312, 0, 0L, 2L, GT_Values.V[3], false, true, TextureSet.SET_METALLIC, 0x555555);
         FeldsherGregsItems.superconductorHVWire = superconductorHV[0];
 
-        FeldsherGregsItems.superconductorBaseEVWire = makeSuperconductorBase("Superconductor Base EV", 15203, 1024L, 2L, GT_Values.V[4], TextureSet.SET_METALLIC, 0x281E5D);
-        ItemStack[][] superconductorEV = makeWire("Superconductor EV", 15318, 0, 0L, 2L, GT_Values.V[4], false, true, TextureSet.SET_METALLIC, 0x281E5D);
+        FeldsherGregsItems.superconductorBaseEVWire = makeSuperconductorBase("Superconductor Base EV", 15203, 1024L, 3L, GT_Values.V[4], TextureSet.SET_METALLIC, 0x281E5D);
+        ItemStack[][] superconductorEV = makeWire("Superconductor EV", 15318, 0, 0L, 3L, GT_Values.V[4], false, true, TextureSet.SET_METALLIC, 0x281E5D);
         FeldsherGregsItems.superconductorEVWire = superconductorEV[0];
 
-        FeldsherGregsItems.superconductorBaseIVWire = makeSuperconductorBase("Superconductor Base IV", 15204, 4096L, 3L, GT_Values.V[5], TextureSet.SET_METALLIC, 0xffff31);
-        ItemStack[][] superconductorIV = makeWire("Superconductor IV", 15324, 0, 0L, 3L, GT_Values.V[5], false, true, TextureSet.SET_METALLIC, 0xffff31);
+        FeldsherGregsItems.superconductorBaseIVWire = makeSuperconductorBase("Superconductor Base IV", 15204, 4096L, 4L, GT_Values.V[5], TextureSet.SET_METALLIC, 0x9e9764);
+        ItemStack[][] superconductorIV = makeWire("Superconductor IV", 15324, 0, 0L, 4L, GT_Values.V[5], false, true, TextureSet.SET_METALLIC, 0x9e9764);
         FeldsherGregsItems.superconductorIVWire = superconductorIV[0];
     }
 
