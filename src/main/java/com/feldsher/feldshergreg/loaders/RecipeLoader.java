@@ -47,6 +47,9 @@ public final class RecipeLoader {
         GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.galvanicGenerator1, bits, new Object[]{"PCP", "HMH", "UWU", 'P', OrePrefixes.pipeMedium.get(Materials.Bronze), 'C', OrePrefixes.circuit.get(Materials.Basic), 'H', ItemList.Battery_Hull_LV, 'M', ItemList.Hull_LV, 'U', ItemList.Electric_Pump_LV, 'W', OrePrefixes.cableGt01.get(Materials.Tin)});
         GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.galvanicGenerator2, bits, new Object[]{"PCP", "HMH", "UWU", 'P', OrePrefixes.pipeMedium.get(Materials.Steel), 'C', OrePrefixes.circuit.get(Materials.Good), 'H', ItemList.Battery_Hull_MV, 'M', ItemList.Hull_MV, 'U', ItemList.Electric_Pump_MV, 'W', OrePrefixes.cableGt01.get(Materials.Copper)});
         GT_ModHandler.addCraftingRecipe(FeldsherGregsItems.galvanicGenerator3, bits, new Object[]{"PCP", "HMH", "UWU", 'P', OrePrefixes.pipeMedium.get(Materials.StainlessSteel), 'C', OrePrefixes.circuit.get(Materials.Advanced), 'H', ItemList.Battery_Hull_HV, 'M', ItemList.Hull_HV, 'U', ItemList.Electric_Pump_HV, 'W', OrePrefixes.cableGt01.get(Materials.Gold)});
+
+        GT_ModHandler.addShapelessCraftingRecipe(FeldsherGregsItems.multiMultiFurnace, new Object[]{ItemList.Machine_Multi_Furnace.get(1L)});
+        GT_ModHandler.addShapelessCraftingRecipe(ItemList.Machine_Multi_Furnace.get(1L), new Object[]{FeldsherGregsItems.multiMultiFurnace});
     }
 
     // Mixer recipes
