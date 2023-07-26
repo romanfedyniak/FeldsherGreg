@@ -17,6 +17,7 @@ public final class FeldsherGregsItems {
     galvanicGenerator1,
     galvanicGenerator2,
     galvanicGenerator3,
+    multiMultiFurnace,
 
     // ItemsLoader
     // - ItemDust

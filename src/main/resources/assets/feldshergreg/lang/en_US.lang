@@ -21,3 +21,6 @@ item.item_ingot.3.name=Superconductor EV Base Ingot
 item.item_ingot.3.tooltip=Ce2Cu2Si2
 item.item_ingot.4.name=Superconductor IV Base Ingot
 item.item_ingot.4.tooltip=La2CuO4
+
+# Multi machines
+gt.blockmachines.multimultifurnace.name=Multi Multi Smelter

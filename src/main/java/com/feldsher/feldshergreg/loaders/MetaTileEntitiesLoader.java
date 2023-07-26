@@ -25,6 +25,8 @@ public final class MetaTileEntitiesLoader {
         FeldsherGregsItems.galvanicGenerator1 = new GT_MetaTileEntity_GalvanicGenerator(15005, "galvanicgenerator1", "Galvanic Generator LV", 1).getStackForm(1);
         FeldsherGregsItems.galvanicGenerator2 = new GT_MetaTileEntity_GalvanicGenerator(15006, "galvanicgenerator2", "Galvanic Generator MV", 2).getStackForm(1);
         FeldsherGregsItems.galvanicGenerator3 = new GT_MetaTileEntity_GalvanicGenerator(15007, "galvanicgenerator3", "Galvanic Generator HV", 3).getStackForm(1);
+
+        FeldsherGregsItems.multiMultiFurnace = new MultiMultiFurnace(15008, "multimachine.multimultifurnace", "Multi Multi Smelter").getStackForm(1);
     }
 
     private static void loadWire() {
