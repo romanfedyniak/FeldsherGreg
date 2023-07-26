@@ -8,7 +8,6 @@ import net.minecraft.util.EnumChatFormatting;
 public class Config {
 
     private static class Defaults {
-        public static final String greeting = "Hello World";
         public static final String copyright = "Added by " + EnumChatFormatting.DARK_GREEN+"FeldsherGreg";
     }
 
@@ -16,16 +15,14 @@ public class Config {
         public static final String general = "general";
     }
 
-    public static String greeting = Defaults.greeting;
     public static String copyright = Defaults.copyright;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
         configuration.load();
 
-        Property greetingProperty =
-                configuration.get(Categories.general, "greeting", Defaults.greeting, "How shall I greet?");
-        greeting = greetingProperty.getString();
+        Property copyrightProperty = configuration.get(Categories.general, "copyright", Defaults.copyright, "Copyright for items");
+        copyright = copyrightProperty.getString();
 
         if (configuration.hasChanged()) {
             configuration.save();

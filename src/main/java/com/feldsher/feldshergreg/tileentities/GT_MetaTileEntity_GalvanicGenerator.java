@@ -101,44 +101,4 @@ public class GT_MetaTileEntity_GalvanicGenerator extends GT_MetaTileEntity_Basic
     private ITexture getTextureFromPath(String path) {
         return new GT_RenderedTexture(new GTCustomIcon("galvanic_generator/" + path));
     }
-
-    // public ITexture[] getFront(byte aColor) {
-    //     return new ITexture[]{super.getFront(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), Textures.BlockIcons.OVERLAYS_ENERGY_OUT[this.mTier]};
-    // }
-
-    // public ITexture[] getBack(byte aColor) {
-    //     return new ITexture[]{super.getBack(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_ACIDHAZARD)};
-    // }
-
-    // public ITexture[] getBottom(byte aColor) {
-    //     return new ITexture[]{super.getBottom(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_ACIDHAZARD)};
-    // }
-
-    // public ITexture[] getTop(byte aColor) {
-    //     return new ITexture[]{super.getTop(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), new GT_RenderedTexture(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT"))};
-    // }
-
-    // public ITexture[] getSides(byte aColor) {
-    //     return new ITexture[]{super.getSides(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_ACIDHAZARD)};
-    // }
-
-    // public ITexture[] getFrontActive(byte aColor) {
-    //     return new ITexture[]{super.getFrontActive(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), Textures.BlockIcons.OVERLAYS_ENERGY_OUT[this.mTier]};
-    // }
-
-    // public ITexture[] getBackActive(byte aColor) {
-    //     return new ITexture[]{super.getBackActive(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_ACIDHAZARD)};
-    // }
-
-    // public ITexture[] getBottomActive(byte aColor) {
-    //     return new ITexture[]{super.getBottomActive(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_ACIDHAZARD)};
-    // }
-
-    // public ITexture[] getTopActive(byte aColor) {
-    //     return new ITexture[]{super.getTopActive(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), new GT_RenderedTexture(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT_ACTIVE"))};
-    // }
-
-    // public ITexture[] getSidesActive(byte aColor) {
-    //     return new ITexture[]{super.getSidesActive(aColor)[0], new GT_RenderedTexture(Textures.BlockIcons.MACHINE_CASING_ACIDHAZARD)};
-    // }
 }

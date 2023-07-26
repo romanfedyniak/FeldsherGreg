@@ -96,12 +96,6 @@ public class MultiMultiFurnace extends GT_MetaTileEntity_MultiFurnace {
                     smeltedOutputs.add(smeltedOutput);
                     if (item.stackSize <= (tMaxParallel - tCurrentParallel)) {
                         tCurrentParallel += item.stackSize;
-                        System.out.print("smeltedOutput.stackSize=");
-                        System.out.println(smeltedOutput.stackSize);
-                        System.out.print("item.stackSize=");
-                        System.out.println(item.stackSize);
-                        System.out.print("smeltedOutput.stackSize*item.stackSize=");
-                        System.out.println(smeltedOutput.stackSize * item.stackSize);
                         outputStackSizes.add(smeltedOutput.stackSize * item.stackSize);
                         item.stackSize = 0;
                     } else {

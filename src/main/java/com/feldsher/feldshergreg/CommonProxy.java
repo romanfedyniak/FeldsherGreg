@@ -10,10 +10,6 @@ public class CommonProxy {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
-
-        FeldsherGreg.info(Config.greeting);
-        FeldsherGreg.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION + " and group name " + Tags.GROUPNAME);
-
         MetaTileEntitiesLoader.load();
         ItemsLoader.load();
     }
