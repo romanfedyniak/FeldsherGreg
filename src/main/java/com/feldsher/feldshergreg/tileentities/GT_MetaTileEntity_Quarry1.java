@@ -51,6 +51,6 @@ public class GT_MetaTileEntity_Quarry1 extends GT_MetaTileEntity_QuarryBase {
 
     @Override
     protected int getBaseProgressTime() {
-        return 800;
+        return 200;
     }
 }
