@@ -132,6 +132,8 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
 
     private boolean canDrain(final Block block, int aX, int aY, int aZ)
     {
+        if (!GT_Utility.eraseBlockByFakePlayer(getFakePlayer(getBaseMetaTileEntity()), aX, aY, aZ, true)) return false;
+
         if (block instanceof IFluidBlock) {
             if (((IFluidBlock)block).canDrain(getBaseMetaTileEntity().getWorld(), aX, aY, aZ)) {
                 return true;
