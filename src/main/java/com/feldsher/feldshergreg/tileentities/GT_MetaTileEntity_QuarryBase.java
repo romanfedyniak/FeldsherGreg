@@ -69,9 +69,9 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
 
         for (int i = mLastXOff; i <= radius; i++) {
             for (int j = (i == mLastXOff ? mLastZOff : -radius); j <= radius; j++) {
-                int aX = xPipe + i;
+                int aX = xDrill + i;
                 int aY = yHead;
-                int aZ = zPipe + j;
+                int aZ = zDrill + j;
                 Block block = getBaseMetaTileEntity().getBlock(aX, aY, aZ);
 
                 if (isHarvestable(block, aX, aY, aZ)) {
