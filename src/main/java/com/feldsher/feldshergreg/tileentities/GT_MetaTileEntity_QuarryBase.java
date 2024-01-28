@@ -136,7 +136,7 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
         int tier = Math.max(1, GT_Utility.getTier(getMaxInputVoltage()));
         this.mEUt = -3 * (1 << (tier << 1));
         double progresstime = (double)(workState == STATE_DOWNWARD ? getBaseProgressTime() : 80) / (double)(1 << tier);
-        this.blocks = (int)(1.0 / progresstime);
+        this.blocks = Math.max(1, (int)(1.0 / progresstime));
         this.mMaxProgresstime = Math.max(1, (int)progresstime);
     }
 
