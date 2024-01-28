@@ -25,6 +25,7 @@ import net.minecraft.world.ChunkPosition;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.IFluidBlock;
+import scala.actors.threadpool.Arrays;
 import net.minecraft.block.BlockLiquid;
 
 import com.feldsher.feldshergreg.Config;
@@ -35,6 +36,7 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
     private static final ItemStack miningPipeTip = GT_ModHandler.getIC2Item("miningPipeTip", 0);
     private static final Block miningPipeTipBlock = GT_Utility.getBlockFromStack(miningPipeTip);
     private int mLastXOff = 0, mLastZOff = 0;
+    private int blocks = 1;
 
     public GT_MetaTileEntity_QuarryBase(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -67,28 +69,21 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
 			mLastZOff = -radius;
         }
 
-        for (int i = mLastXOff; i <= radius; i++) {
-            for (int j = (i == mLastXOff ? mLastZOff : -radius); j <= radius; j++) {
-                int aX = xDrill + i;
-                int aY = yHead;
-                int aZ = zDrill + j;
-                Block block = getBaseMetaTileEntity().getBlock(aX, aY, aZ);
-
-                if (isHarvestable(block, aX, aY, aZ)) {
-                    if (tryBreak(block, aX, aY, aZ)) {
-                        mLastXOff = i;
-                        mLastZOff = j;
-                        return true;
-                    }
-                    return false;
-                }
-                else if (canDrain(block, aX, aY, aZ))
-                {
-                    pumpBlock(block, aX, aY, aZ);
-                    return true;
-                }
-            }
+        int state = -1;
+        for (int b = 0; b < this.blocks; b++)
+        {
+        	int new_state = working(xDrill, zDrill, yHead);
+	        switch (new_state) {
+	        case 2: return (state == 1 ? true : false);
+	        case 1: state = new_state;
+	        }
+	        
+	        if (new_state == 0) {
+	        	state = -1;
+	        	break;
+        	}
         }
+        if (state == 1) return true;
 
         switch (tryLowerPipe()) {
         case 2: mMaxProgresstime = 0; return false;
@@ -99,6 +94,33 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
         mLastXOff = -radius;
         mLastZOff = -radius;
         return true;
+    }
+    
+    private int working(int xDrill, int zDrill, int yHead) {
+        int radius = getRadius();
+    	for (int i = mLastXOff; i <= radius; i++) {
+            for (int j = (i == mLastXOff ? mLastZOff : -radius); j <= radius; j++) {
+                int aX = xDrill + i;
+                int aY = yHead;
+                int aZ = zDrill + j;
+                Block block = getBaseMetaTileEntity().getBlock(aX, aY, aZ);
+
+                if (isHarvestable(block, aX, aY, aZ)) {
+                    if (tryBreak(block, aX, aY, aZ)) {
+                        mLastXOff = i;
+                        mLastZOff = j;
+                        return 1;
+                    }
+                    return 2;
+                }
+                else if (canDrain(block, aX, aY, aZ))
+                {
+                    pumpBlock(block, aX, aY, aZ);
+                    return 1;
+                }
+            }
+        }
+    	return 0;
     }
 
     @Override
@@ -113,17 +135,21 @@ public abstract class GT_MetaTileEntity_QuarryBase extends GT_MetaTileEntity_Dri
         this.mEfficiencyIncrease = 10000;
         int tier = Math.max(1, GT_Utility.getTier(getMaxInputVoltage()));
         this.mEUt = -3 * (1 << (tier << 1));
-        this.mMaxProgresstime = (workState == STATE_DOWNWARD ? getBaseProgressTime() : 80) / (1 << tier);
-        this.mMaxProgresstime = Math.max(1, this.mMaxProgresstime);
+        double progresstime = (double)(workState == STATE_DOWNWARD ? getBaseProgressTime() : 80) / (double)(1 << tier);
+        this.blocks = (int)(1.0 / progresstime);
+        this.mMaxProgresstime = Math.max(1, (int)progresstime);
     }
 
-    private boolean tryBreak(final Block block, int aX, int aY, int aZ)
+	@SuppressWarnings("unchecked")
+	private boolean tryBreak(final Block block, int aX, int aY, int aZ)
     {
         if (tryConsumeDrillingFluid() == false) return false;
 
         int blockMeta = getBaseMetaTileEntity().getMetaID(aX, aY, aZ);
         List<ItemStack> outputItems = 
             block.getDrops(getBaseMetaTileEntity().getWorld(), aX, aY, aZ, blockMeta, 1);
+        if (mOutputItems != null)
+        	outputItems.addAll(Arrays.asList(mOutputItems));
         mOutputItems = outputItems.toArray(new ItemStack[outputItems.size()]); 
         
         setAir(aX, aY, aZ);
